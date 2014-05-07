@@ -1,0 +1,4 @@
+#!/bin/bash
+FWDIR=`dirname $0`
+EXTRA_ARGS=""
+java -Xmx1200M -XX:MaxPermSize=250m $EXTRA_ARGS -jar $FWDIR/../etc/sbt/sbt-launch.jar "$@"
