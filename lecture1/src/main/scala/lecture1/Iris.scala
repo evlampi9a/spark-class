@@ -9,10 +9,10 @@ import java.io.PrintWriter
 object Iris {
 
   //All lines of source file
-  val allLines = Source.fromFile("data/iris.data").getLines().toSeq
+  val allLines: Seq[String] = Source.fromFile("data/iris.data").getLines().toSeq
 
   //No blank lines
-  val sampleLines: Seq[String] = ???
+  val sampleLines: Seq[String] = null
 
   object IrisClass extends Enumeration {
     val Setosa, Versicolor, Virginica = Value
@@ -50,28 +50,28 @@ object Iris {
   }
 
   //All valid samples
-  lazy val samples: Seq[Sample] = ???
+  lazy val samples: Seq[Sample] = null
 
   //Samples with sepalLength <= 6.0
-  lazy val shortSepalSamples: Seq[Sample] = ???
+  lazy val shortSepalSamples: Seq[Sample] = null
 
   //shortSepalSamples grouped by class
-  lazy val shortByClass: Map[IrisClass.Value, Seq[Sample]] = ???
+  lazy val shortByClass: Map[IrisClass.Value, Seq[Sample]] = null
 
   //Count of shortSepalSamples by class
-  lazy val shortSpeciesCounts: Map[IrisClass.Value, Int] = ???
+  lazy val shortSpeciesCounts: Map[IrisClass.Value, Int] = null
 
   //Max item of sequence
   def max(s: Seq[Double]): Double = ???
 
   //Max petal length of shortSepalSamples by class
-  lazy val maxSpeciesPetalLength: Map[IrisClass.Value, Double] = ???
+  lazy val maxSpeciesPetalLength: Map[IrisClass.Value, Double] = null
 
   //Sequence mean
   def mean(s: Seq[Double]): Double = ???
 
   //Mean petal length of shortSepalSamples by class
-  lazy val meanSpeciesPetalLength: Map[IrisClass.Value, Double] = ???
+  lazy val meanSpeciesPetalLength: Map[IrisClass.Value, Double] = null
 
   //Variance without Bessel's correction
   def uncorrectedVariance(s: Seq[Double]): Double = ???
@@ -82,7 +82,7 @@ object Iris {
   def sd(s: Seq[Double]) = Math.sqrt(correctedVariance(s))
 
   //Mean petal length of shortSepalSamples by class
-  lazy val sdSpeciesPetalLength: Map[IrisClass.Value, Double] = ???
+  lazy val sdSpeciesPetalLength: Map[IrisClass.Value, Double] = null
 
   def writeSamples(w: PrintWriter, samples: Seq[Sample]) = {
     samples.map(s => s"${s.sepalLength},${s.sepalWidth},${s.petalLength},${s.petalWidth},${IrisClass.toString(s.cls)}\n").foreach(s => w.write(s))
